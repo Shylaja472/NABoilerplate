@@ -1,0 +1,32 @@
+//
+// Prefix header for all source files of the 'Recipes' target in the 'Recipes' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+  #import <CoreData/CoreData.h>
+#endif
+
+
+#define DocumentsDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, \
+NSUserDomainMask, YES) objectAtIndex:0]
+
+#define LibraryDirectory [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, \
+NSUserDomainMask, YES) objectAtIndex:0]
+
+#define DocumentsSubDirectory(dir) [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, \
+NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:dir]
+
+#define LibrarySubDirectory(dir) [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, \
+NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:dir]
+
+#define CacheDirectory [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#define MainContext [[NAPersistentStore sharedStore] managedObjectContext]
